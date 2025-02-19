@@ -1,6 +1,7 @@
 "use client"
 import HeroSection from '@/components/HeroSection'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const page = () => {
@@ -66,7 +67,7 @@ const page = () => {
 
 
                 <div className="py-7">
-                <button className="text-btnText text-white w-224 h-btn rounded-md border border-[#FFFFFF]">Explorer Jobs</button>
+                <Link href={"/open-vacancies"} className="text-btnText flex justify-center items-center text-white w-224 h-btn rounded-md border border-[#FFFFFF]">Explorer Jobs</Link>
                 </div>
 
 
