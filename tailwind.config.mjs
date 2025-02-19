@@ -14,9 +14,19 @@ export default {
       },
       height: {
         btn: "54px", // Convert 161 to rem (161px / 4)
+        660: "600px", // Convert 161 to rem (161px / 4)
+        522:"52px",
+        500:"500px",
+        530:"800px",
+        520:"600px"
       },
       width: {
         161: "161px", // Custom width
+        258: "258px",
+        224: "224px",
+        244:"244px",
+        500:"500px",
+        530:"600px"
       },
       fontFamily: {
         orbitron: ["Orbitron", "sans-serif"],
@@ -27,6 +37,12 @@ export default {
       fontWeight: {
         bold: "700",
       },
+      spacing: {
+        230: "239px", // Custom margin-left (ms-230)
+        100:"36%",
+        130:"52%"
+      },
+      
     },
   },
   plugins: [],
