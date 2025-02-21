@@ -1,12 +1,10 @@
 "use client"
-
-
-
+import animationData from "@/public/ani.json";
+import Lottie from "lottie-react";
 import HeroSection from "@/components/HeroSection";
 import Progress from "@/components/Progress";
 import TechSlider from "@/components/TechSlider";
 import Image from "next/image";
-
 export default function Home() {
 
 
@@ -103,8 +101,11 @@ export default function Home() {
           </div>
 
           <div className="w-full relative md:col-span-5">
-            <div className="bg-no-repeat h-64 w-1/2 -mt-32 me-2 bg-center lg:w-full lg:h-[95vh]" style={{backgroundImage:"url(/Home/animation.png)",backgroundSize:"100% 100%"}}></div>
-            
+            {/* <div className="bg-no-repeat h-64 w-1/2 -mt-32 me-2 bg-center lg:w-full lg:h-[95vh]" style={{backgroundImage:"url(/Home/animation.png)",backgroundSize:"100% 100%"}}></div> */}
+            <div className="h-64 w-1/2 -mt-32 me-2 lg:w-full lg:h-[95vh]">
+
+            <Lottie className="h-full w-full" animationData={animationData} loop={true} />
+            </div>
           </div>
         </div>
       </div>

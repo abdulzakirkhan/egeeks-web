@@ -201,7 +201,24 @@ Form{
 .-right-22{
   right: -5.7rem;
 }
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 200;
+    stroke: rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    stroke-dashoffset: 0;
+    stroke: rgba(255, 255, 255, 0.7);
+  }
+  100% {
+    stroke-dashoffset: 200;
+    stroke: rgba(255, 255, 255, 0.2);
+  }
+}
 
+.animate-path {
+  animation: draw 2s linear infinite;
+}
 
 /* *{
   border: 1px solid white;
