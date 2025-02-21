@@ -61,7 +61,7 @@ const OpenVacanciesPage = () => {
     <>
       <section className="mt-24">
         <div className="container mx-auto px-6">
-          <div className="flex justify-between items-center py-12 border-b border-gray-600">
+          <div className="flex flex-wrap justify-between items-center py-12 border-b border-gray-600">
             <div>
               <h1 className="text-white text-3xl lg:text-6xl font-bold">
                 Open Vacancies
@@ -77,9 +77,9 @@ const OpenVacanciesPage = () => {
           </div>
           {/* Dropdown Filters */}
           <div className="grid grid-cols-1 gap-5 mt-6">
-            <div className="w-full space-x-3 flex flex-wrap">
+            <div className="w-full space-y-4 md:space-y-0 lg:space-x-3 flex flex-wrap">
                 {/* Category Dropdown */}
-                <select className="text-white p-3 w-244 bg-red rounded-md">
+                <select className="text-white p-3 w-full lg:w-244 bg-red rounded-md">
                 <option value="">Category</option>
                 <option value="engineering">Engineering</option>
                 <option value="marketing">Marketing</option>
@@ -87,7 +87,7 @@ const OpenVacanciesPage = () => {
                 </select>
 
                 {/* Job Type Dropdown */}
-                <select className="text-white p-3 w-244 bg-red rounded-md">
+                <select className="text-white p-3 w-full lg:w-244 bg-red rounded-md">
                 <option value="">Job Type</option>
                 <option value="full-time">Full-Time</option>
                 <option value="part-time">Part-Time</option>
@@ -95,7 +95,7 @@ const OpenVacanciesPage = () => {
                 </select>
 
                 {/* Location Dropdown */}
-                <select className="text-white p-3 w-244 bg-red rounded-md">
+                <select className="text-white p-3 w-full lg:w-244 bg-red rounded-md">
                 <option value="">Location</option>
                 <option value="new-york">New York</option>
                 <option value="san-francisco">San Francisco</option>
@@ -107,14 +107,14 @@ const OpenVacanciesPage = () => {
           <div className="grid grid-cols-1 gap-6 py-12">
 
             {vacancies.map((job,index) => (
-                <div className="w-full bg-white rounded-lg flex justify-between items-center p-6" key={index}>
+                <div className="w-full flex-wrap bg-white rounded-lg flex justify-between items-center p-6" key={index}>
                     <div className="space-y-3">
                         <h2 className="text-black text-32 font-semibold">{job.title}</h2>
                         <div className="flex items-center gap-2">
                             <Image src={"/Vacancies/bag.png"} width={24} height={24} alt="" />    
                             <span className="text-20">{job.contractType}</span>
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center flex-wrap py-4 md:pu-0 gap-2">
                             <div className="flex items-center gap-2">
                                 <Image src={"/Vacancies/calander.png"} width={24} height={24} alt="" />  
                                 <span className="text-20">{job.posted}</span>

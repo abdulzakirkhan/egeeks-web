@@ -51,7 +51,7 @@ const ApplicationFormPage = () => {
     <>
 
     <section className="mt-20">
-        <div className="container flex gap-4 mx-auto px-12 py-12">
+        <div className="container flex-wrap flex gap-4 mx-auto px-12 py-12">
             <Link href={""} className="flex text-white justify-between gap-4 items-center">
                 Open Vacancies
                 <IoIosArrowForward size={23} className="text-white" />
@@ -65,7 +65,7 @@ const ApplicationFormPage = () => {
             </Link>
         </div>
         <div className="container flex flex-col justify-center items-center gap-8 mx-auto px-6">
-            <div className="cards w-[1062px] roundedCust bg-white p-6 shadow-md">
+            <div className="cards xl:w-[1062px] roundedCust bg-white p-6 shadow-md">
             <h1 className="text-white text-3xl lg:text-4xl font-semibold text-center">Application Form</h1>
             {/* Formik Form */}
             <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>

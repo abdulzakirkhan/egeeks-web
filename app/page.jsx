@@ -4,6 +4,7 @@
 
 import HeroSection from "@/components/HeroSection";
 import Progress from "@/components/Progress";
+import TechSlider from "@/components/TechSlider";
 import Image from "next/image";
 
 export default function Home() {
@@ -101,18 +102,19 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-full hidden lg:block relative md:col-span-5">
-            <div className="bg-no-repeat absolute -top-36 -right-20 me-2 bg-center w-full lg:h-[95vh]" style={{backgroundImage:"url(/Home/animation.png)",backgroundSize:"100% 100%"}}></div>
+          <div className="w-full relative md:col-span-5">
+            <div className="bg-no-repeat h-64 w-1/2 -mt-32 me-2 bg-center lg:w-full lg:h-[95vh]" style={{backgroundImage:"url(/Home/animation.png)",backgroundSize:"100% 100%"}}></div>
+            
           </div>
         </div>
       </div>
-      <div className="w-full hidden lg:block h-28 mt-24 bg-no-repeat bg-center" style={{backgroundImage:"url(/Home/shadow.png)",zIndex:"999",backdropFilter:"blur(14px)"}} />
+        <div className="w-full absolute -bottom-8 hidden xl:block h-32 bg-no-repeat bg-center" style={{backgroundImage:"url(/Home/shadow.png)",zIndex:"999",backdropFilter:"blur(14px)"}} />
       </HeroSection>
 
 
       <section className="bg-[#0C0C0C] -mt-6 py-12">
         <div className="container mx-auto px-6 mt-12">
-          <h1 className="text-5xl font-bold text-white text-center">Our Areas of <span className="text-red">Expertise</span> </h1>
+          <h1 className="text-5xl font-bold z-50 text-white text-center">Our Areas of <span className="text-red">Expertise</span> </h1>
         </div>
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 py-12">
@@ -133,7 +135,7 @@ export default function Home() {
 
 
 
-      <section className="bg-no-repeat bg-center w-full lg:h-[64vh]" style={{backgroundImage:"url(/Home/ai.png)"}}>
+      <section className="bg-no-repeat bg-center w-full lg:h-[90vh]" style={{backgroundImage:"url(/Home/ai.png)"}}>
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-12 py-6">
             <div className="w-full md:col-span-4"></div>
@@ -148,13 +150,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="w-full h-20 -mt-6 bg-no-repeat bg-center" style={{backgroundImage:"url(/Home/shadow.png)",zIndex:"999",backdropFilter:"blur(14px)"}} />
       </section>
 
 
 
 
-      <section className="mt-16 pt-5 bg-cover bg-no-repeat bg-center" style={{backgroundImage:"url(/Home/theme.png)"}}>
+      {/* <section className="mt-16 pt-5 bg-cover bg-no-repeat w-full bg-center" style={{backgroundImage:"url(/Home/theme.png)"}}>
         <div className="container py-12 mx-auto px-6">
           <h1 className="text-2xl lg:text-5xl text-white text-center font-bold">Technologies we work with</h1>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 items-center gap-12 py-8">
@@ -165,8 +166,10 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
+
+      <TechSlider />
 
 
 
@@ -188,10 +191,11 @@ export default function Home() {
                 <button className="text-btnText w-161 h-btn bg-red rounded-md text-white">Get Started</button>
               </div>
             </div>
-            <div className="w-full border-2 border-transparent lg:col-span-5">
-              <div className="lg:bg-no-repeat bg-none lg:-mr-24 lg:bg-center" style={{backgroundImage:"url(/Home/hand-bg.png)",backgroundSize:"100% 100%"}}>
-                <Image src={"/Home/hand.png"} width={340} height={234} alt="" className="lg:ms-230" />
-              </div>
+            <div className="w-full relative lg:col-span-5">
+                {/* <img src={"/Home/hand-bg.png"} alt="" className="absolute -top-9 -right-22 z-0" /> */}
+                <div className="bg-no-repeat bg-center w-full xl:max-w-96 xl:ms-32" style={{backgroundImage:"url(/Home/hand-bg.png)", backgroundSize:"100% 100%"}}>
+                  <img src={"/Home/hand.png"} alt="" height={200} className="w-full" />
+                </div>
             </div>
           </div>
         </div>

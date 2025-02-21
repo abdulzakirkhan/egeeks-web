@@ -41,7 +41,7 @@ const ContactUsPage = () => {
         />
         <div className="container flex flex-col justify-center items-center gap-8 mx-auto px-6 py-14">
           <h1 className="text-white text-3xl lg:text-6xl font-bold text-center">Contact Us</h1>
-          <div className="cards w-[1062px] roundedCust bg-white p-6 shadow-md">
+          <div className="cards w-full xl:w-[1062px] roundedCust bg-white p-6 shadow-md">
             {/* Formik Form */}
             <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
               {({ isSubmitting }) => (
@@ -115,7 +115,7 @@ const ContactUsPage = () => {
 
 
         <div
-          className="bg-no-repeat ms-auto bg-center absolute left-0 -bottom-20 h-520 w-500"
+          className="bg-no-repeat ms-auto bg-center absolute left-0 -bottom-20 h-520 w-full md:w-500"
           style={{ backgroundImage: "url(/Contact/left.png)", backgroundSize: "100% 100%" }}
         />
       </section>

@@ -40,7 +40,7 @@ const JobDetailsPage = () => {
         <div className="grid grid-cols-1n lg:grid-cols-12 gap-4">
             <div className="w-full lg:col-span-7">
                 <h1 className="text-white text-3xl lg:text-6xl font-semibold">{job.title}</h1>
-                <div className="flex items-center gap-8 py-4">
+                <div className="flex flex-wrap items-center gap-8 py-4">
                     <div className="flex items-center gap-3">
                         <Image src={"/Vacancies/bag.png"} width={24} height={24} alt="" />
                         <span className="text-20 text-white">{job.jobtype}</span>
@@ -85,7 +85,7 @@ const JobDetailsPage = () => {
             <div className="w-full lg:col-span-5">
                 <div className="cards roundedCust p-8 h-500 flex flex-col justify-center">
                     <h2 className="text-center border-b-2 border-white pb-3 text-white text-3xl">Job Details</h2>
-                    <div className="px-12 space-y-4 pt-4">
+                    <div className="md:px-12 space-y-4 pt-4">
                         <div className="flex text-white justify-between items-center">
                             <span>job Category:</span>
                             <span>{job.category}</span>

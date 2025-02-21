@@ -37,25 +37,26 @@ const EventsPage = () => {
             <h1 className="text-3xl text-white lg:text-6xl font-bold"> <span className="text-red">Events</span> at eGeeks Global</h1>
             <p className="subtitle py-3 text-white">At Egeeks Global, we believe that innovation thrives in a vibrant and engaging environment. Our events are designed to foster collaboration, celebrate achievements, and inspire creativity among our team members.</p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-1276 py">
-            <div className="w-full wrap flex flex-col gap-4">
-              <div className="flex flex-col lg:flex-row wrap gap-2">
-                <div className="flex wrap flex-col gap-2">
-                  <img src={"/Events/1.png"} alt='' className="w-200" />
-                  <img src={"/Events/2.png"} alt='' className="mt-3 w-200" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-[1276px] mx-auto py">
+            <div className="w-full flex flex-col gap-4">
+              <div className="flex flex-col lg:flex-row gap-2">
+                <div className="flex flex-col gap-2">
+                  <img src={"/Events/1.png"} alt='' className="w-full h-1/2 lg:max-w-[200px] object-cover" />
+                  <img src={"/Events/2.png"} alt='' className="mt-3 h-1/2 w-full lg:max-w-[200px] object-cover" />
                 </div>
-                <img src={"/Events/3.png"} alt="" className="w-408" />
+
+
+                <img src={"/Events/3.png"} alt="" className="w-full max-w-[408px] object-cover" />
               </div>
-              <img src={"/Events/6.png"} className="w-624" />
+              <img src={"/Events/6.png"} className="w-full max-w-[624px] object-cover" />
             </div>
 
-
-            <div className="w-full wrap flex flex-col gap-6">
-              <div className="flex wrap items-center gap-2">
-                <img src={"/Events/4.png"} alt="" className="w-314"  />
-                <img src={"/Events/5.png"} alt="" className="w-314" />
+            <div className="w-full flex flex-col lg:overflow-hidden gap-6">
+              <div className="flex flex-wrap lg:overflow-hidden items-center gap-2">
+                <img src={"/Events/4.png"} alt="" className="w-full max-w-[280px] object-cover" />
+                <img src={"/Events/5.png"} alt="" className="w-full max-w-[280px] object-cover" />
               </div>
-              <img src={"/Events/7.png"} className="w-639" />
+              <img src={"/Events/7.png"} className="w-full max-w-[639px] object-cover" />
             </div>
           </div>
         </div>
@@ -70,7 +71,7 @@ const EventsPage = () => {
             {events.map((eve,index) =>( 
               <div className="w-full" key={index}>
                 <img src={eve.image} alt='' className="w-full md:h-96" />
-                <div className="space-y-5 py-3 md:h-56">
+                <div className="space-y-5 py-3 md:max-h-56">
                   <p className="text-white m-0 p-0">{eve.date}</p>
                   <h1 className="text-2xl lg:text-4xl m-0 font-bold text-white">{eve.title}</h1>
                   <p className="subtitle text-white">{eve.description}</p>

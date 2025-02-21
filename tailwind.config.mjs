@@ -35,7 +35,8 @@ export default {
         241:"241px",
         135:"135px",
         313:"313px",
-        208:"208px"
+        208:"208px",
+        360:"340px"
       },
       fontFamily: {
         orbitron: ["Orbitron", "sans-serif"],
@@ -49,7 +50,7 @@ export default {
         bold: "700",
       },
       spacing: {
-        230: "239px", // Custom margin-left (ms-230)
+        230: "10px", // Custom margin-left (ms-230)
         100:"36%",
         130:"52%"
       },

@@ -1,8 +1,10 @@
 "use client"
+import Cards from '@/app/about-us/_components/Cards';
 import { cardsData } from '@/app/data';
 import Image from 'next/image';
 import { useParams } from 'next/navigation'
 import React from 'react'
+import SliderComponent from './_components/SliderComponent';
 
 const ServicesPage = () => {
   const {id} = useParams();
@@ -26,6 +28,20 @@ const ServicesPage = () => {
                 <button className="h-63 w-224 bg-red text-white rounded-lg">Request Service</button>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <Cards />
+
+
+
+
+      <section className="py-32">
+        <div className="container mx-auto px-6">
+          <h1 className="text-white text-3xl lg:text-5xl font-semibold">Other services we offer</h1>
+          <div className="py-6">
+            <SliderComponent />
           </div>
         </div>
       </section>

@@ -48,7 +48,7 @@ const page = () => {
       <HeroSection bgImage={"/Services/hero.png"}> 
         <div className="container mx-auto mt-12 px-6 py-8">
             <div className="grid grid-cols-1 md:grid-cols-12">
-            <div className="w-full mt-20 md:col-span-8">
+            <div className="w-full md:col-span-8">
                 <h1 className="text-white text-6xl font-bold">Innovative Solutions for a</h1>
                 <h1 className="text-red text-6xl font-bold mt-4">Smarter Tomorrow</h1>
                 <p className="text-white mt-4 title">At eGeeks Global, we redefine the way you approach challenges with cutting-edge services designed to empower individuals and businesses alike. Explore our comprehensive services.</p>
@@ -63,20 +63,19 @@ const page = () => {
             </div>
             </div>
         </div>
-        <div className="w-full h-28 mt-24 bg-no-repeat bg-center" style={{backgroundImage:"url(/Home/shadow.png)",zIndex:"999",backdropFilter:"blur(14px)"}} />
       </HeroSection>
 
 
-      <section className="mt-20 py-12">
+      <section className="mt-8 lg:mt-20 lg:py-12">
         <div className="container mx-auto px-6">
-            <h1 className="text-white text-5xl pb-14 font-bold text-center">Services we offer</h1>
+            <h1 className="text-white text-2xl md:mt-0 lg:text-5xl pb-14 font-bold text-center">Services we offer</h1>
             {cardsData.map((card, index) => (
-                <Link href={`/our-services/${card.id}`} className={`grid ${index === 1 ? "bg-[#23282A] rounded-l-lg rounded-r-xl ps-3" : index === 3 ? "bg-[#23282A] rounded-l-lg rounded-r-xl ps-3" : index === 5 ? "bg-[#23282A] rounded-l-lg rounded-r-xl ps-3" : ""} grid-cols-1 md:grid-cols-12 my-14 lg:grid-cols-12 justify-center items-center`} key={index}>
+                <Link href={`/our-services/${card.id}`} className={`grid gap-4 lg:gap-12  ${index === 1 ? "bg-[#23282A] rounded-l-lg rounded-r-xl ps-0 lg:ps-3" : index === 3 ? "bg-[#23282A] rounded-l-lg rounded-r-xl lg:ps-3" : index === 5 ? "bg-[#23282A] rounded-l-lg rounded-r-xl lg:ps-3" : ""} grid-cols-1 md:grid-cols-12 my-14 lg:grid-cols-12 justify-center items-center`} key={index}>
                     {index % 2 === 0 ? (
                         // Image first when index is even
                         <>
                             <div className={`w-full md:col-span-4`}>
-                                <Image src={card.image} width={300} height={100} alt="" className="h-96 w-96" />
+                                <Image src={card.image} width={300} height={100} alt="" className="w-full lg:h-96 lg:w-96" />
                             </div>
                             <div className="w-full md:col-span-8 text-white">
                                 <h1 className="text-center heading-4 mb-8">{card.title}</h1>
@@ -86,12 +85,12 @@ const page = () => {
                     ) : (
                         // Text first when index is odd
                         <>
-                            <div className="w-full md:col-span-8 text-white">
+                            <div className="w-full md:col-span-8 p-4 lg:-p-0 text-white">
                                 <h1 className="text-center heading-4 mb-8">{card.title}</h1>
                                 <p className="subtitle tracking-wider text-[#FFFFFF]">{card.description}</p>
                             </div>
                             <div className={`w-full ${index === 1 ? "flex justify-end" : index === 3 ? "flex justify-end" : index === 5 ? "flex justify-end" :""} md:col-span-4`}>
-                                <Image src={card.image} width={300} height={100} alt="" className="h-96 w-96" />
+                                <Image src={card.image} width={300} height={100} alt="" className="w-full lg:h-96 lg:w-96" />
                             </div>
                         </>
                     )}

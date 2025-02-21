@@ -36,11 +36,11 @@ const LifeAteGeeksPage = () => {
   return (
     <>
         <HeroSection bgImage={"/Life-Egeeks/hero.png"}> 
-            <div className="container mx-auto mt-12 px-6 py-8">
+            <div className="container mx-auto lg:mt-12 px-6 lg:py-8">
                 <div className="grid grid-cols-1 md:grid-cols-12 justify-center">
-                <div className="w-full mt-12 md:col-span-12 flex flex-col justify-center items-center">
-                    <h1 className="text-white text-6xl font-bold">Life at <span className="text-red">eGeeks Global</span> </h1>
-                    <p className="text-white mt-6 py-3 lg:py-7 title text-center">At eGeeks Global, we believe in creating a workplace that fosters creativity, innovation, and collaboration. Our team is our greatest asset, and we are committed to providing an environment where everyone can thrive, grow, and contribute to our mission of delivering exceptional digital solutions to our clients.</p>
+                <div className="w-full mt-4 lg:mt-12 md:col-span-12 flex flex-col justify-center items-center">
+                    <h1 className="text-white text-3xl text-center lg:text-6xl font-bold">Life at <span className="text-red">eGeeks Global</span> </h1>
+                    <p className="text-white lg:mt-6 py-3 lg:py-7 title text-center">At eGeeks Global, we believe in creating a workplace that fosters creativity, innovation, and collaboration. Our team is our greatest asset, and we are committed to providing an environment where everyone can thrive, grow, and contribute to our mission of delivering exceptional digital solutions to our clients.</p>
 
                 </div>
                 </div>
@@ -52,7 +52,7 @@ const LifeAteGeeksPage = () => {
          <section className="py-12">
                 <div className="container flex flex-col gap-12 mx-auto px-6">
                     {cardsData.map((card, index) => (
-                        <div className={`grid  grid-cols-1 md:grid-cols-12 my-14 lg:grid-cols-12 justify-center items-center h-52`} key={index}>
+                        <div className={`grid  grid-cols-1 md:grid-cols-12 my-4 lg:my-14 lg:grid-cols-12 justify-center items-center lg:h-52`} key={index}>
                             {index % 2 !== 0 ? (
                                 // Image first when index is even
                                 <>
@@ -60,7 +60,7 @@ const LifeAteGeeksPage = () => {
                                         <Image src={card.image} width={300} height={100} alt="" className="w-full" />
                                         <h1 className="text-2xl lg:text-4xl text-white absolute top-3 left-2">{card.innerTitle}</h1>
                                     </div>
-                                    <div className="w-full h-full px-4 md:col-span-6 text-white">
+                                    <div className="w-full h-full lg:px-4 md:col-span-6 text-white">
                                         <h1 className="text-center heading-4 mb-8">{card.title}</h1>
                                         <p className="title tracking-wider text-[#FFFFFF]">{card.description}</p>
                                     </div>
@@ -68,7 +68,7 @@ const LifeAteGeeksPage = () => {
                             ) : (
                                 // Text first when index is odd
                                 <>
-                                    <div className="w-full h-full px-4 md:col-span-6 text-white">
+                                    <div className="w-full h-full lg:px-4 md:col-span-6 text-white">
                                         <p className="title tracking-wider text-[#FFFFFF]">{card.description}</p>
                                     </div>
                                     <div className={`w-full h-full md:col-span-5 relative`}>

@@ -60,7 +60,7 @@ const page = () => {
     <HeroSection bgImage={"/Careers/hero.png"}> 
         <div className="container mx-auto mt-12 px-6 py-8">
             <div className="grid grid-cols-1 md:grid-cols-12 justify-center">
-            <div className="w-full mt-20 md:col-span-12 flex flex-col justify-center items-center">
+            <div className="w-full mt-2 md:col-span-12 flex flex-col justify-center items-center">
                 <h1 className="text-white text-6xl font-bold">Join our Team</h1>
                 <p className="text-white mt-4 title text-center">At eGeeks Global, we believe that our greatest asset is our people. We are always looking for passionate, creative, and driven individuals to join our team and contribute to our mission of delivering innovative solutions. If you're ready to make an impact and be part of a forward-thinking company, we’d love to hear from you!</p>
 
@@ -74,7 +74,7 @@ const page = () => {
             </div>
             </div>
         </div>
-        <div className="w-full h-28 mt-24 bg-no-repeat bg-center" style={{backgroundImage:"url(/Home/shadow.png)",zIndex:"999",backdropFilter:"blur(14px)"}} />
+        <div className="w-full h-28 hidden lg:flex absolute bottom-0 bg-no-repeat bg-center" style={{backgroundImage:"url(/Home/shadow.png)",zIndex:"999",backdropFilter:"blur(14px)"}} />
       </HeroSection>
 
 

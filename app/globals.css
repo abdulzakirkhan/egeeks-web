@@ -198,14 +198,14 @@ Form{
 
 
 
+.-right-22{
+  right: -5.7rem;
+}
 
 
-
-
-
-
-
-
+/* *{
+  border: 1px solid white;
+} */
 @media (max-width:1336px) {
   .w-1276{
     width: 100% !important;
@@ -213,7 +213,11 @@ Form{
   .wrap{
     flex-wrap: wrap !important;
   }
+  .none{
+    background-image: none !important;
+  }
 }
+
 @media (max-width:710px) {
   
   .w-200{
@@ -238,6 +242,7 @@ Form{
     width: 100% !important;
     height: auto !important;
   }
+
 }
 @media (max-width:900px) {
   .heading2{

@@ -11,15 +11,15 @@ const [query, setQuery] = useState("");
   const postsPerPage = 9;
 
   const data = [
-    { title: "Lorem ipsum dolor sit amet.", category: "AI", date: "15/01/2025", description: "Lorem ipsum dolor sit amet consectetur. Ut quam vitae rutrum fames ullamcorper ultricies. Purus urna diam sed urna cursus.", image: "/Blogs/Cards/1.png" },
-    { title: "Lorem ipsum dolor sit amet.", category: "AI", date: "15/01/2025", description: "Lorem ipsum dolor sit amet consectetur. Ut quam vitae rutrum fames ullamcorper ultricies. Purus urna diam sed urna cursus.", image: "/Blogs/Cards/2.png" },
-    { title: "Lorem ipsum dolor sit amet.", category: "Software", date: "15/01/2025", description: "Lorem ipsum dolor sit amet consectetur. Ut quam vitae rutrum fames ullamcorper ultricies. Purus urna diam sed urna cursus.", image: "/Blogs/Cards/3.png" },
-    { title: "Lorem ipsum dolor sit amet.", category: "Web Dev", date: "15/01/2025", description: "Lorem ipsum dolor sit amet consectetur. Ut quam vitae rutrum fames ullamcorper ultricies. Purus urna diam sed urna cursus.", image: "/Blogs/Cards/4.png" },
-    { title: "Lorem ipsum dolor sit amet.", category: "AI", date: "15/01/2025", description: "Lorem ipsum dolor sit amet consectetur. Ut quam vitae rutrum fames ullamcorper ultricies. Purus urna diam sed urna cursus.", image: "/Blogs/Cards/5.png" },
-    { title: "Lorem ipsum dolor sit amet.", category: "Software", date: "15/01/2025", description: "Lorem ipsum dolor sit amet consectetur. Ut quam vitae rutrum fames ullamcorper ultricies. Purus urna diam sed urna cursus.", image: "/Blogs/Cards/6.png" },
-    { title: "Lorem ipsum dolor sit amet.", category: "AI", date: "15/01/2025", description: "Lorem ipsum dolor sit amet consectetur. Ut quam vitae rutrum fames ullamcorper ultricies. Purus urna diam sed urna cursus.", image: "/Blogs/Cards/7.png" },
-    { title: "Lorem ipsum dolor sit amet.", category: "AI", date: "15/01/2025", description: "Lorem ipsum dolor sit amet consectetur. Ut quam vitae rutrum fames ullamcorper ultricies. Purus urna diam sed urna cursus.", image: "/Blogs/Cards/8.png" },
-    { title: "Lorem ipsum dolor sit amet.", category: "Mobile Dev", date: "15/01/2025", description: "Lorem ipsum dolor sit amet consectetur. Ut quam vitae rutrum fames ullamcorper ultricies. Purus urna diam sed urna cursus.", image: "/Blogs/Cards/9.png" },
+    { title: "Lorem ipsum dolor sit amet.", category: "Artificial Intelligence", date: "15/01/2025", description: "Lorem ipsum dolor sit amet consectetur. Ut quam vitae rutrum fames ullamcorper ultricies. Purus urna diam sed urna cursus.", image: "/Blogs/Cards/1.png" },
+    { title: "Lorem ipsum dolor sit amet.", category: "Artificial Intelligence", date: "15/01/2025", description: "Lorem ipsum dolor sit amet consectetur. Ut quam vitae rutrum fames ullamcorper ultricies. Purus urna diam sed urna cursus.", image: "/Blogs/Cards/2.png" },
+    { title: "Lorem ipsum dolor sit amet.", category: "Software Development", date: "15/01/2025", description: "Lorem ipsum dolor sit amet consectetur. Ut quam vitae rutrum fames ullamcorper ultricies. Purus urna diam sed urna cursus.", image: "/Blogs/Cards/3.png" },
+    { title: "Lorem ipsum dolor sit amet.", category: "Web Development", date: "15/01/2025", description: "Lorem ipsum dolor sit amet consectetur. Ut quam vitae rutrum fames ullamcorper ultricies. Purus urna diam sed urna cursus.", image: "/Blogs/Cards/4.png" },
+    { title: "Lorem ipsum dolor sit amet.", category: "Artificial Intelligence", date: "15/01/2025", description: "Lorem ipsum dolor sit amet consectetur. Ut quam vitae rutrum fames ullamcorper ultricies. Purus urna diam sed urna cursus.", image: "/Blogs/Cards/5.png" },
+    { title: "Lorem ipsum dolor sit amet.", category: "Software Development", date: "15/01/2025", description: "Lorem ipsum dolor sit amet consectetur. Ut quam vitae rutrum fames ullamcorper ultricies. Purus urna diam sed urna cursus.", image: "/Blogs/Cards/6.png" },
+    { title: "Lorem ipsum dolor sit amet.", category: "Artificial Intelligence", date: "15/01/2025", description: "Lorem ipsum dolor sit amet consectetur. Ut quam vitae rutrum fames ullamcorper ultricies. Purus urna diam sed urna cursus.", image: "/Blogs/Cards/7.png" },
+    { title: "Lorem ipsum dolor sit amet.", category: "Artificial Intelligence", date: "15/01/2025", description: "Lorem ipsum dolor sit amet consectetur. Ut quam vitae rutrum fames ullamcorper ultricies. Purus urna diam sed urna cursus.", image: "/Blogs/Cards/8.png" },
+    { title: "Lorem ipsum dolor sit amet.", category: "Mobile App Development", date: "15/01/2025", description: "Lorem ipsum dolor sit amet consectetur. Ut quam vitae rutrum fames ullamcorper ultricies. Purus urna diam sed urna cursus.", image: "/Blogs/Cards/9.png" },
 
 ];
   const categories = ["All", "Artificial Intelligence", "Software Development", "Web Development", "Mobile App Development"];
@@ -124,7 +124,7 @@ const [query, setQuery] = useState("");
         </div>
       </div>
 
-          <div className="bg-no-repeat bg-center absolute top-100 w-500 h-500" style={{backgroundImage:"url(/Blogs/Cards/right.png)",backgroundSize:"100% 100%"}}></div>
+          <div className="bg-no-repeat bg-center absolute top-100 w-full md:w-500 h-500" style={{backgroundImage:"url(/Blogs/Cards/right.png)",backgroundSize:"100% 100%"}}></div>
           <div className="bg-no-repeat bg-center absolute top-130 right-0 w-530 h-530" style={{backgroundImage:"url(/Blogs/Cards/left.png)",backgroundSize:"100% 100%"}}></div>
     </section>
   );
