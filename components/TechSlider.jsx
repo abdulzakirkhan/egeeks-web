@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import Image from "next/image"; // If you're using Next.js
 
-const technologies =["/Home/dev/Python.png","/Home/dev/react.png","/Home/dev/Mysql.png","/Home/dev/javascript.png","/Home/dev/Css.png","/Home/dev/Php.png"]
+const technologies =["/Home/dev/Python.png","/Home/dev/react.png","/Home/dev/Mysql.png","/Home/dev/javascript.png","/Home/dev/Css.png","/Home/dev/Php.png","/Home/dev/bootstrap.png", "/Home/dev/nodejs.png"]
 
 const TechSlider = () => {
   return (
@@ -27,7 +27,7 @@ const TechSlider = () => {
             1024: { slidesPerView: 5 },
           }}
           loop={true}
-          autoplay={{ delay: 2000, disableOnInteraction: false }}
+          autoplay={{ delay: 200, disableOnInteraction: false }}
           modules={[Autoplay]}
           className="py-8"
         >
