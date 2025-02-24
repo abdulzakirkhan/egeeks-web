@@ -1,3 +1,4 @@
+"use client"
 // components/ContactForm.tsx
 import { useFormik } from "formik";
 import PhoneInput from "react-phone-input-2";
