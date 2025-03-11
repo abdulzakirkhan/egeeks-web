@@ -15,19 +15,19 @@ const Navbar = () => {
   const headerRef = useRef(null);
 
   // Close dropdowns when clicking outside
-  const handleClickOutside = useCallback((event) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setIsCompanyOpen(false);
-    }
-    if (headerRef.current && !headerRef.current.contains(event.target)) {
-      setIsMobileMenuOpen(false);
-    }
-  }, []);
+  // const handleClickOutside = useCallback((event) => {
+  //   if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+  //     setIsCompanyOpen(false);
+  //   }
+  //   if (headerRef.current && !headerRef.current.contains(event.target)) {
+  //     setIsMobileMenuOpen(false);
+  //   }
+  // }, []);
 
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [handleClickOutside]);
+  // useEffect(() => {
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => document.removeEventListener("mousedown", handleClickOutside);
+  // }, [handleClickOutside]);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
