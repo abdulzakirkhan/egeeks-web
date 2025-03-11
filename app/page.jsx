@@ -1,10 +1,12 @@
 "use client"
 import animationData from "@/public/ani.json";
-import Lottie from "lottie-react";
+// import Lottie from "lottie-react";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import HeroSection from "@/components/HeroSection";
 import Progress from "@/components/Progress";
 import TechSlider from "@/components/TechSlider";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 export default function Home() {
 
 
@@ -102,7 +104,7 @@ export default function Home() {
 
           <div className="w-full relative md:col-span-5">
             <div className="h-full w-full lg:-mt-32 me-2 lg:w-full lg:h-[95vh]">
-              <Lottie className="h-full w-full" animationData={animationData} loop={true} />
+              <Lottie className="h-full w-full" animationData={animationData} autoplay loop={true} />
             </div>
           </div>
         </div>
