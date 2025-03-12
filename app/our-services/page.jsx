@@ -43,6 +43,13 @@ const page = () => {
             image:"/Services/6.png"
         },
      ]
+ 
+
+
+    const getFirstWords = (text, wordLimit) => {
+    if (!text) return ""; 
+    return text.split(/\s+/).slice(0, wordLimit).join(" ") + (text.split(/\s+/).length > wordLimit ? "..." : "");
+    };
   return (
     <>
       <HeroSection bgImage={"/Services/hero.png"}> 
@@ -70,7 +77,7 @@ const page = () => {
         <div className="container mx-auto px-6">
             <h1 className="text-white text-2xl md:mt-0 lg:text-5xl pb-14 font-bold text-center">Services we offer</h1>
             {cardsData.map((card, index) => (
-                <Link href={`/our-services/${card.id}`} className={`grid gap-4 lg:gap-12  ${index === 1 ? "bg-[#23282A] rounded-l-lg rounded-r-xl ps-0 lg:ps-3" : index === 3 ? "bg-[#23282A] rounded-l-lg rounded-r-xl lg:ps-3" : index === 5 ? "bg-[#23282A] rounded-l-lg rounded-r-xl lg:ps-3" : ""} grid-cols-1 md:grid-cols-12 my-14 lg:grid-cols-12 justify-center items-center`} key={index}>
+                <Link href={`/our-services/${card.id}`} className={`grid gap-4 lg:gap-12 min-h-[24rem] ${index === 1 ? "bg-[#23282A] rounded-l-lg rounded-r-xl ps-0 lg:ps-3" : index === 3 ? "bg-[#23282A] rounded-l-lg rounded-r-xl lg:ps-3" : index === 5 ? "bg-[#23282A] rounded-l-lg rounded-r-xl lg:ps-3" : ""} grid-cols-1 md:grid-cols-12 my-14 lg:grid-cols-12 justify-center items-center`} key={index}>
                     {index % 2 === 0 ? (
                         // Image first when index is even
                         <>
@@ -79,7 +86,7 @@ const page = () => {
                             </div>
                             <div className="w-full md:col-span-8 text-white">
                                 <h1 className="text-center heading-4 mb-8">{card.title}</h1>
-                                <p className="subtitle tracking-wider text-[#FFFFFF]">{card.description}</p>
+                                <p className="subtitle tracking-wider text-justify text-[#FFFFFF]">{getFirstWords(card.description, 93)}</p>
                             </div>
                         </>
                     ) : (
@@ -87,7 +94,7 @@ const page = () => {
                         <>
                             <div className="w-full md:col-span-8 p-4 lg:-p-0 text-white">
                                 <h1 className="text-center heading-4 mb-8">{card.title}</h1>
-                                <p className="subtitle tracking-wider text-[#FFFFFF]">{card.description}</p>
+                                <p className="subtitle tracking-wider text-[#FFFFFF]">{getFirstWords(card.description,93)}</p>
                             </div>
                             <div className={`w-full ${index === 1 ? "flex justify-end" : index === 3 ? "flex justify-end" : index === 5 ? "flex justify-end" :""} md:col-span-4`}>
                                 <Image src={card.image} width={300} height={100} alt="" className="w-full lg:h-96 lg:w-96" />
