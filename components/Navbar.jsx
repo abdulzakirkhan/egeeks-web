@@ -10,10 +10,11 @@ const Navbar = () => {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCompanyOpen, setIsCompanyOpen] = useState(false);
-  const [isMobileCompanyOpen, setIsMobileCompanyOpen] = useState(false);
   const dropdownRef = useRef(null);
   const headerRef = useRef(null);
+  const [isMobileCompanyOpen, setIsMobileCompanyOpen] = useState(false);
 
+  // Close dropdowns when clicking outside
   const handleClickOutside = useCallback((event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       setIsCompanyOpen(false);
@@ -31,7 +32,7 @@ const Navbar = () => {
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setIsCompanyOpen(false);
-    setIsMobileCompanyOpen(false);
+    setIsMobileMenuOpen(false);
   }, [pathname]);
 
   const linkClass = (path, yes) =>
@@ -52,7 +53,45 @@ const Navbar = () => {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex justify-around w-full items-center gap-8">
-              {/* ... existing desktop menu code ... */}
+              <div className="flex justify-center mx-auto items-center gap-6">
+                <Link href="/" className={linkClass("/")}>Home</Link>
+                <Link href="/our-services" className={linkClass("/our-services")}>Our Services</Link>
+                <Link href="/careers" className={linkClass("/careers")}>Careers</Link>
+                <Link href="/newsletter" className={linkClass("/newsletter")}>Newsletter</Link>
+                {/* Company Dropdown */}
+                <div className="relative" ref={dropdownRef}>
+                  <button
+                    onClick={() => setIsCompanyOpen((prev) => !prev)}
+                    className="flex items-center text-white hover:text-[#951B46]"
+                    aria-expanded={isCompanyOpen}
+                  >
+                    Company
+                    <FaChevronDown className={`ml-2 transition-transform ${isCompanyOpen ? "rotate-180" : ""}`} />
+                  </button>
+                  <AnimatePresence>
+                    {isCompanyOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        className="absolute top-8 right-0 bg-white shadow-lg rounded-lg min-w-[200px]"
+                      >
+                        <div className="flex flex-col py-2">
+                          <Link href="/about-us" className={`${linkClass("/about-us", "yes")} p-3`}>About Us</Link>
+                          <Link href="/life-at-egeeks" className={`${linkClass("/life-at-egeeks", "yes")} p-3`}>Life at eGeeks</Link>
+                          <Link href="/events" className={`${linkClass("/events", "yes")} p-3`}>Events</Link>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                <Link href="/blogs" className={linkClass("/blogs")}>Blogs</Link>
+              </div>
+
+              <Link href="/contact-us" className="bg-[#951B46] px-6 py-2 text-white rounded-md font-bold hover:bg-[#7a1538] transition-colors">
+                Contact Us
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -69,9 +108,8 @@ const Navbar = () => {
                 )}
               </svg>
             </button>
-          </div>
 
-          {/* Mobile Menu */}
+            {/* Mobile Menu */}
           <AnimatePresence>
             {isMobileMenuOpen && (
               <motion.div
@@ -102,7 +140,7 @@ const Navbar = () => {
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: "auto" }}
                             exit={{ opacity: 0, height: 0 }}
-                            className="pl-4 mt-2 overflow-hidden flex flex-col space-y-3"
+                            className="pl-4 overflow-hidden flex flex-col space-y-2 mt-3"
                           >
                             <Link href="/about-us" className={linkClass("/about-us", true)}>About Us</Link>
                             <Link href="/life-at-egeeks" className={linkClass("/life-at-egeeks", true)}>Life at eGeeks</Link>
@@ -124,6 +162,7 @@ const Navbar = () => {
               </motion.div>
             )}
           </AnimatePresence>
+          </div>
         </div>
       </nav>
     </header>
