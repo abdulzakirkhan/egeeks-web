@@ -4,6 +4,10 @@ import HeroSection from '@/components/HeroSection'
 import Image from 'next/image'
 import React from 'react'
 import Cards from './_components/Cards'
+import LgCard from './_components/LgCard'
+import { MdEmail, MdLocationOn } from 'react-icons/md'
+import { IoIosCall } from 'react-icons/io'
+import LocationCard from './_components/LocationCard'
 
 const AbouUsPage = () => {
     const cards =[
@@ -19,10 +23,8 @@ const AbouUsPage = () => {
             image:"/About-us/Cards/2.png",
             des1:"Lorem ipsum dolor sit amet consectetur. Imperdiet convallis lacus sagittis lorem diam nibh et quis hendrerit. Ac enim elementum consectetur duis integer magna lacus. Eu viverra faucibus urna pellentesque eu. Massa eleifend est duis platea eget.",
             des2:"Lorem ipsum dolor sit amet consectetur. Imperdiet convallis lacus sagittis lorem diam nibh et quis hendrerit. Ac enim elementum consectetur duis integer magna lacus. Eu viverra faucibus urna pellentesque eu. Massa eleifend est duis platea eget."
-        },
+        }
     ]
-
-
     const singleCard=[
         {
             title:"Our Commitment",
@@ -31,6 +33,43 @@ const AbouUsPage = () => {
             des2:"Lorem ipsum dolor sit amet consectetur. Volutpat sed porttitor pretium tellus lacus justo. Dictum sed id commodo eget. Magna nibh ultrices facilisis lacus magnis sed. Dui et lectus vel interdum etiam nunc molestie nisl urna. Lorem ipsum dolor sit amet consectetur. Volutpat sed porttitor pretium tellus lacus justo. Dictum sed id commodo eget. Magna nibh ultrices facilisis lacus magnis sed. Dui et lectus vel interdum etiam nunc molestie nisl urna.",
         },
     ]
+
+
+
+
+    const locationData = [
+        {
+            title: "Sharjah Office",
+            address:"Office B 39-017, Block B, Sharjah Research Technology and Innovation Park, Sharjah. UAE",
+            phone:"+971-503026376",
+            email:"hr@egeeksglobal.com",
+            image:"/About-us/1.png",
+            location:  <MdLocationOn size={43} className="text-white -mt-2" />,
+            phoneIcon:<IoIosCall />,
+            emailIcon:<MdEmail />
+        },
+        {
+            title: "Islamabad Office",
+            address:"eGeeks Global, Office LGF-3 , Lower Ground Floor level Merdian Software Technology Park Nadra Building Rehmanabad Rawalpindi, Pakistan.",
+            phone:"+92 51 2716350",
+            email:"hr@egeeksglobal.com",
+            image:"/About-us/2.png",
+            location : <MdLocationOn size={43} className="text-white -mt-2" />,
+            phoneIcon:<IoIosCall />,
+            emailIcon:<MdEmail />
+        },
+        {
+            title: "London Office",
+            address:"60 Peach Street Wokingham RG4 01XG, London, UK",
+            phone:"+44 7577 530783",
+            email:"hr@egeeksglobal.com",
+            image:"/About-us/3.png",
+            location: <MdLocationOn size={43} className="text-white -mt-2" />,
+            phoneIcon:<IoIosCall />,
+            emailIcon:<MdEmail />
+        },
+    ]
+
   return (
     <>
         <HeroSection bgImage={"/About-us/hero.png"}> 
@@ -58,7 +97,7 @@ const AbouUsPage = () => {
                 }} 
             />
         </div>
-    </HeroSection>
+        </HeroSection>
 
 
 
@@ -67,25 +106,11 @@ const AbouUsPage = () => {
         <div className="container mx-auto px-6">
             <div className="flex flex-col gap-20">
                 {cards.map((card, index) => (
-                    <div className={`flex justify-center flex-wrap lg:flex-nowrap items-center gap-4 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`} key={index} >
-                        <div className="">
-                            <Image src={card.image} width={392} height={392} alt="" className="" />
-                        </div>
-                        <div className="w-full">
-                            <h1 className={`text-white  ${index === 0 ? "text-end" :""} w-full text-2xl lg:text-5xl font-semibold -mt-10 py-3`}>
-                                {card.title}
-                            </h1>
-
-                            <div className={`cards2 lg:h-64 flex flex-col justify-center  ${index === 0 ? "lg:-ml-12" : "lg:-mr-12"} bg-transparent text-[#FFFFFF] p-6 border-2 border-[#ADC8D5] rounded-lg`}>
-                                <p className="subtitle py-3">{card?.des1}</p>
-
-                                <p className="subtitle py-3">{card?.des2}</p>
-
-                                <p className="subtitle">{card.des3}</p>
-                            </div>
-                        </div>
-                    </div>
+                    <LgCard key={index} image={card?.image}
+                    index={index} title={card?.title}
+                    des1={card?.des1} des2={card?.des2} des3={card?.des3} />
                 ))}
+
             </div>
         </div>
       </section>
@@ -93,37 +118,27 @@ const AbouUsPage = () => {
 
         <Cards />
 
-
-
-      {/* <section className="py-12">
-        <div className="container mx-auto px-6">
-        <div className="flex flex-col gap-20">
+        <div className="container mx-auto px-6 py-16 mt-12">
+            <div className="flex flex-col gap-20">
                 {singleCard.map((card, index) => (
-                    <div
-                        className={`flex justify-center items-center gap-4`}
-                        key={index}
-                    >
-                        <div className="">
-                          <Image src={card.image} width={428} height={428} alt="" className="" />
-                        </div>
-                        <div className="w-full">
-                        <h1 className={`text-white text-end w-full text-2xl lg:text-5xl font-semibold -mt-10 py-3`}>
-                            {card.title}
-                        </h1>
+                    <LgCard key={index} image={card?.image}
+                    index={index} title={card?.title}
+                    des1={card?.des1} des2={card?.des2} des3={card?.des3} />
+                ))}
 
-                        <div className={`cards2 h-60 flex flex-col justify-center -ml-24 -mt-3 bg-transparent text-[#FFFFFF] p-6 border-2 border-[#ADC8D5] rounded-lg`}>
-                            <p className="subtitle py-3">{card?.des1}</p>
+            </div>
+        </div>
 
-                            <p className="subtitle py-3">{card?.des2}</p>
-
-                            <p className="subtitle">{card.des3}</p>
-                        </div>
-                        </div>
-                    </div>
+      <section className="py-12">
+        <div className="container mx-auto px-6">
+            <h1 className="heading2 font-orbitron !w-full text-center">Our Locations</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-center py-16">
+                {locationData.map((card , index) => (
+                    <LocationCard key={index} {...card}  />
                 ))}
             </div>
         </div>
-      </section> */}
+      </section>
 
 
 

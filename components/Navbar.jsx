@@ -10,31 +10,35 @@ const Navbar = () => {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCompanyOpen, setIsCompanyOpen] = useState(false);
-  const [isMobileCompanyOpen, setIsMobileCompanyOpen] = useState(false);
   const dropdownRef = useRef(null);
   const headerRef = useRef(null);
 
   // Close dropdowns when clicking outside
-  // const handleClickOutside = useCallback((event) => {
-  //   if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-  //     setIsCompanyOpen(false);
-  //   }
-  //   if (headerRef.current && !headerRef.current.contains(event.target)) {
-  //     setIsMobileMenuOpen(false);
-  //   }
-  // }, []);
+  const handleClickOutside = useCallback((event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsCompanyOpen(false);
+    }
+    if (headerRef.current && !headerRef.current.contains(event.target)) {
+      setIsMobileMenuOpen(false);
+    }
+  }, []);
 
-  // useEffect(() => {
-  //   document.addEventListener("mousedown", handleClickOutside);
-  //   return () => document.removeEventListener("mousedown", handleClickOutside);
-  // }, [handleClickOutside]);
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [handleClickOutside]);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setIsCompanyOpen(false);
   }, [pathname]);
 
-  const linkClass = (path) =>
-    `text-base ${pathname === path ? "text-[#951B46] border-b-2 border-b-[#951B46]" : "text-white hover:text-[#951B46] hover:border-b-2 hover:border-b-[#951B46]"}`;
+  const linkClass = (path, yes) =>
+    `text-base ${
+      pathname === path
+        ? "text-[#951B46] border-b-2 border-b-[#951B46]"
+        : `${yes ? "text-black" : "text-white"} hover:text-[#951B46] hover:border-b-2 hover:border-b-[#951B46]`
+    }`;
 
   return (
     <header ref={headerRef} className="absolute top-0 left-0 w-full z-50">
@@ -51,11 +55,11 @@ const Navbar = () => {
                 <Link href="/" className={linkClass("/")}>Home</Link>
                 <Link href="/our-services" className={linkClass("/our-services")}>Our Services</Link>
                 <Link href="/careers" className={linkClass("/careers")}>Careers</Link>
-                
+                <Link href="/newsletter" className={linkClass("/newsletter")}>Newsletter</Link>
                 {/* Company Dropdown */}
                 <div className="relative" ref={dropdownRef}>
                   <button
-                    onClick={() => setIsCompanyOpen(!isCompanyOpen)}
+                    onClick={() => setIsCompanyOpen((prev) => !prev)}
                     className="flex items-center text-white hover:text-[#951B46]"
                     aria-expanded={isCompanyOpen}
                   >
@@ -71,9 +75,9 @@ const Navbar = () => {
                         className="absolute top-8 right-0 bg-white shadow-lg rounded-lg min-w-[200px]"
                       >
                         <div className="flex flex-col py-2">
-                          <Link href="/about-us" className={linkClass("/about-us")}>About Us</Link>
-                          <Link href="/life-at-egeeks" className={linkClass("/life-at-egeeks")}>Life at eGeeks</Link>
-                          <Link href="/events" className={linkClass("/events")}>Events</Link>
+                          <Link href="/about-us" className={`${linkClass("/about-us", "yes")} p-3`}>About Us</Link>
+                          <Link href="/life-at-egeeks" className={`${linkClass("/life-at-egeeks", "yes")} p-3`}>Life at eGeeks</Link>
+                          <Link href="/events" className={`${linkClass("/events", "yes")} p-3`}>Events</Link>
                         </div>
                       </motion.div>
                     )}
@@ -90,7 +94,7 @@ const Navbar = () => {
 
             {/* Mobile Menu Button */}
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={() => setIsMobileMenuOpen((prev) => !prev)}
               className="md:hidden text-white hover:text-[#951B46]"
               aria-expanded={isMobileMenuOpen}
             >
