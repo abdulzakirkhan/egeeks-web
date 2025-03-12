@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-const page = () => {
+const OurServicesPage = () => {
      const cardsData =[
         {
             id: 1,
@@ -119,4 +119,4 @@ const page = () => {
   )
 }
 
-export default page
+export default OurServicesPage;

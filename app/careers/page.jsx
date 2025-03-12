@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-const page = () => {
+const CareersPage = () => {
     const cardsData=[
         {
             description:"We foster a culture of creativity and innovation, where employees are encouraged to bring fresh ideas and take ownership of meaningful projects.",
@@ -119,4 +119,4 @@ const page = () => {
   )
 }
 
-export default page
+export default CareersPage

@@ -6,7 +6,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { IoSearch } from "react-icons/io5";
 
-const Page = () => {
+const NewsLetterPage = () => {
   const data = [
     { title: "Lorem ipsum dolor sit amet.", description: "Lorem ipsum dolor sit amet consectetur. Ut quam vitae rutrum fames ullamcorper ultricies. Purus urna diam sed urna cursus.", createdAt: "15/01/2025", image: "/New-Letter/1.png" },
     { title: "Lorem ipsum dolor sit amet.", description: "Lorem ipsum dolor sit amet consectetur. Ut quam vitae rutrum fames ullamcorper ultricies. Purus urna diam sed urna cursus.", createdAt: "15/01/2025", image: "/New-Letter/2.png" },
@@ -97,4 +97,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default NewsLetterPage;
